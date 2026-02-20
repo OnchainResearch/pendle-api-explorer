@@ -61,3 +61,9 @@
 - Distinction between implied and underlying APY
 - Format numbers with round() and percentage conversion
 
+# Stage 3 - Data cleaning & filtering
+- Fetched all 413 markets using a while loop pagination
+- Filtered out expired markets using datetime comparison
+- Filtered out corrupted liquidity values with a threshold
+- Sorted results by liquidity and displayed top 10
+
