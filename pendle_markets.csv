@@ -1,0 +1,79 @@
+Name,Protocol,Expiry,Liquidity USD,Implied APY,Underlying APY,Categories
+sNUSD,Neutrl,2026-03-05T00:00:00.000Z,35561432.21,12.2,10.09,"stables, points"
+sUSDe,Ethena,2026-05-07T00:00:00.000Z,33816654.89,4.0,3.31,"stables, ethena, points"
+srUSDe,Strata,2026-04-02T00:00:00.000Z,21868063.03,3.93,2.13,"stables, points, ethena"
+jrUSDe,Strata,2026-04-02T00:00:00.000Z,13935911.22,7.09,7.28,"stables, points, ethena"
+savUSD,Avant Protocol,2026-05-14T00:00:00.000Z,12827305.38,9.61,8.29,"stables, points"
+cUSDO,OpenEden,2026-05-28T00:00:00.000Z,11529144.82,4.59,3.17,"stables, rwa"
+cUSD,Cap,2026-07-23T00:00:00.000Z,9261959.77,5.5,0,"points, stables"
+sYUSD,Aegis,2026-03-26T00:00:00.000Z,7504095.01,6.48,0,"points, stables"
+reUSD,re.xyz,2026-06-25T00:00:00.000Z,7062753.21,8.74,6.26,"stables, rwa"
+stcUSD,Cap,2026-07-23T00:00:00.000Z,6488806.35,4.89,3.9,"stables, points"
+wstETH,Lido,2026-06-25T00:00:00.000Z,6154159.31,2.49,2.36,eth
+siUSD,InfiniFi,2026-03-26T00:00:00.000Z,6149689.98,5.44,4.62,"stables, points"
+USD (Midas mHYPER),Midas,2026-04-30T00:00:00.000Z,5999005.83,8.05,5.71,"stables, points"
+reUSDe,re.xyz,2026-06-25T00:00:00.000Z,4561950.79,12.91,12.73,"stables, rwa"
+rswETH,Swell,2026-06-25T00:00:00.000Z,4458800.73,3.06,4.61,"points, eth"
+USD (Midas mAPOLLO),Midas ,2026-04-30T00:00:00.000Z,4451032.81,7.59,7.72,"points, stables"
+msY,Main Street Finance,2026-04-09T00:00:00.000Z,3496241.33,11.83,10.2,"stables, points"
+coreUSDC,Upshift Finance,2026-04-30T00:00:00.000Z,3399182.13,7.34,0.0,"stables, points"
+DETH,Makina,2026-04-23T00:00:00.000Z,3207233.03,3.68,0,"eth, points"
+USD3,3Jane,2026-03-19T00:00:00.000Z,3039677.39,6.06,0.0,"stables, points, rwa"
+mHyperBTC,Midas,2026-04-30T00:00:00.000Z,3034340.48,5.24,1.46,"btc, points"
+sENA,Ethena,2026-04-30T00:00:00.000Z,2889797.41,11.52,0,"points, others, ethena"
+jrNUSD,Strata,2026-05-28T00:00:00.000Z,2558793.1,11.25,10.63,"stables, points"
+USDe,Ethena,2026-05-07T00:00:00.000Z,2512073.25,2.74,0,"stables, points, ethena"
+avUSD,Avant Protocol,2026-05-14T00:00:00.000Z,2509239.38,8.48,0,"points, stables"
+srNUSD,Strata,2026-05-28T00:00:00.000Z,2245581.48,7.51,7.33,"stables, points"
+sUSDf,Falcon Finance,2026-06-18T00:00:00.000Z,2218310.2,6.04,5.84,"stables, points"
+wstETH,Lido,2027-12-30T00:00:00.000Z,2194020.84,2.38,2.36,eth
+hgETH,Kelp (Gain),2026-06-25T00:00:00.000Z,2084403.04,5.05,4.5,"eth, points"
+DUSD,Makina,2026-04-23T00:00:00.000Z,2027368.71,7.86,5.59,"stables, points"
+sUSN,Noon Capital,2026-07-30T00:00:00.000Z,1713402.37,8.15,6.37,"stables, points"
+RLP,Resolv,2026-04-09T00:00:00.000Z,1667311.49,6.66,0,"points, others, stables"
+NUSD,Neutrl,2026-02-26T00:00:00.000Z,1642773.37,12.42,0,"stables, points"
+strETH,Lido,2026-03-26T00:00:00.000Z,1640307.97,3.81,1.28,"eth, points"
+DBIT,Makina,2026-04-23T00:00:00.000Z,1621289.59,2.74,0,"btc, points"
+weETH,Ether.fi,2026-06-25T00:00:00.000Z,1330734.46,2.78,2.63,"points, eth"
+msUSD,Main Street Finance,2026-04-09T00:00:00.000Z,1322403.34,8.87,0,"stables, points"
+stUSDS,Sky,2026-06-25T00:00:00.000Z,1314442.68,6.82,9.91,stables
+weETHs,Ether.Fi (Symbiotic),2026-06-25T00:00:00.000Z,1189599.3,3.72,2.39,"eth, points"
+rsETH,Kelp,2026-06-25T00:00:00.000Z,1129686.65,2.5,3.02,"points, eth"
+upUSDC,Upshift Finance,2026-04-02T00:00:00.000Z,1115641.01,7.47,13.32,"stables, points"
+msyrupUSDp,Midas,2026-02-26T00:00:00.000Z,984430.56,7.17,7.93,stables
+tETH,Treehouse Finance,2026-04-30T00:00:00.000Z,930672.88,3.45,2.42,"eth, points"
+superUSDC,Superform,2026-04-30T00:00:00.000Z,906487.88,6.8,3.54,"stables, points"
+pufETH,Puffer,2026-06-25T00:00:00.000Z,874582.4,4.13,4.96,"points, eth"
+mHyperETH,Midas,2026-04-30T00:00:00.000Z,766871.14,5.8,0,"eth, points"
+agETH,Kelp (Gain),2026-06-25T00:00:00.000Z,684240.67,5.16,5.72,"points, eth"
+fxSAVE,f(x) Protocol,2026-04-30T00:00:00.000Z,632570.75,6.29,2.88,stables
+sAID,GAIB,2026-07-30T00:00:00.000Z,545671.76,9.17,12.05,"stables, points, rwa"
+swETH,Swell,2026-06-25T00:00:00.000Z,525998.52,3.33,2.98,eth
+asdCRV,Concentrator,2026-06-25T00:00:00.000Z,509462.01,29.68,34.94,others
+asdPENDLE,Stake DAO (Concentrator),2026-03-26T00:00:00.000Z,503194.36,16.73,14.52,others
+sBOLD,Liquity,2026-06-25T00:00:00.000Z,460523.56,5.11,4.22,stables
+nBASIS,Nest,2026-03-26T00:00:00.000Z,454657.95,7.34,3.03,"stables, points"
+uniETH,Bedrock,2026-06-25T00:00:00.000Z,454010.61,4.21,3.74,"points, eth"
+ysyBOLD,Yearn,2026-05-28T00:00:00.000Z,388768.83,6.73,1.68,stables
+syrupUSDC,Maple,2026-03-26T00:00:00.000Z,315052.98,4.71,4.53,"stables, rwa"
+USP,Piku,2026-06-25T00:00:00.000Z,313498.11,13.32,7.0,"stables, points"
+wOETH,Origin,2026-06-25T00:00:00.000Z,296036.59,3.5,2.68,eth
+sUSP,Pareto,2026-06-25T00:00:00.000Z,288257.33,9.43,7.11,"stables, points, rwa"
+ynRWAx,YieldNest,2026-10-15T00:00:00.000Z,282616.32,12.94,12.25,"stables, rwa"
+Lido GGV,Lido,2026-03-26T00:00:00.000Z,236138.02,3.52,1.39,eth
+USDf,Falcon Finance,2026-06-18T00:00:00.000Z,149027.29,5.38,0,"stables, points"
+superWETH,Superform,2026-04-30T00:00:00.000Z,140445.42,5.34,2.7,"points, eth"
+wstUSR,Resolv,2026-06-25T00:00:00.000Z,118918.03,5.92,0.18,"stables, points"
+USD (Midas mEDGE),Midas,2026-04-30T00:00:00.000Z,93864.78,6.43,3.3,"stables, points"
+USD (Midas mMEV),Midas,2026-04-30T00:00:00.000Z,91426.27,6.9,0,"stables, points"
+wsrUSD,Reservoir,2026-02-26T00:00:00.000Z,80381.23,7.42,5.0,"stables, points"
+iUSD,InfiniFi,2026-06-25T00:00:00.000Z,76869.97,4.79,0,"stables, points"
+rUSD,Reservoir,2026-02-26T00:00:00.000Z,70839.9,8.16,0,"stables, points"
+uniBTC,Bedrock,2026-06-25T00:00:00.000Z,70180.21,0.76,0,"btc, points"
+sUSDa,Avalon Finance,2026-06-18T00:00:00.000Z,54753.12,5.1,4.08,stables
+AID,GAIB,2026-07-30T00:00:00.000Z,53183.46,9.77,0,"stables, rwa, points"
+hwHLP,Hyperwave,2026-06-25T00:00:00.000Z,51923.83,8.49,1.1,"hype, others"
+USDaf,Asymmetry,2026-04-30T00:00:00.000Z,49696.32,6.94,0,"stables, points"
+fusnstETH,IPOR,2026-04-30T00:00:00.000Z,45271.38,7.08,0,eth
+ARM-WETH-stETH,Origin Protocol,2026-06-25T00:00:00.000Z,41151.18,4.0,5.73,others
+ynUSDx,YieldNest,2026-04-30T00:00:00.000Z,5590.26,7.37,7.0,stables

@@ -1,4 +1,5 @@
 import requests
+import csv
 
 base_url = "https://api-v2.pendle.finance/core/v1/1/markets"
 
@@ -57,3 +58,23 @@ for market in top10:
     print("Implied APY  :", round(market["impliedApy"] * 100, 2), "%")
     print("UnderlyingAPY:", round(market["underlyingApy"] * 100, 2), "%")
     print("Categories   :", market["categoryIds"])
+
+# -----------------------
+# Export data to csv file
+with open("pendle_markets.csv", "w", newline="") as f:
+    writer = csv.writer(f)
+
+    writer.writerow(["Name", "Protocol", "Expiry", "Liquidity USD", "Implied APY", "Underlying APY", "Categories"])
+
+    for market in sorted_markets:
+        writer.writerow([
+            market["simpleName"],
+            market["protocol"],
+            market["expiry"],
+            round(market["liquidity"]["usd"], 2),
+            round(market["impliedApy"] * 100, 2),
+            round(market["underlyingApy"] * 100, 2),
+            ", ".join(market["categoryIds"])
+        ])
+
+print("CSV exported: pendle_markets.csv")
