@@ -1,50 +1,52 @@
 import requests
 import csv
 
-base_url = "https://api-v2.pendle.finance/core/v1/1/markets"
-
-all_markets = []
-skip = 0
-limit = 100
-
-# ---------------------------------
-# Set while loop with 100 API limit
-while True :
-    response = requests.get(base_url, params={"limit": limit, "skip": skip})
-    data = response.json()
-
-    results = data["results"]
-    all_markets.extend(results)
-
-    skip += limit
-    
-    if skip >= data["total"]:
-        break
-
-# ----------------------------------------------------------------
-# Filtering markets by being still active and showing correct data
+from config import chains, limit
 from datetime import datetime, timezone
 
 today = datetime.now(timezone.utc)
-
 filtered_markets = []
 
-for market in all_markets:
-    #Filter 1 : skip expired markets
-    expiry = datetime.fromisoformat(market["expiry"].replace("Z", "+00:00"))
-    if expiry < today:
-        continue
-
-    #Filter 2 : skip suspicious liquidity (over 1 billion$)
-    if market["liquidity"]["usd"] > 1_000_000_000:
-        continue
-
-    filtered_markets.append(market)
-
-print(f"Markets after filtering: {len(filtered_markets)}")
-
 # ---------------------------------------------
-# Parsing market data overt the selected fields
+# Set initial loop through all supported chains
+for name, chain_id in chains.items():
+    base_url = f"https://api-v2.pendle.finance/core/v1/{chain_id}/markets" 
+    chain_markets = []
+    skip = 0
+    count_before = len(filtered_markets)
+
+    # ---------------------------------
+    # Set while loop with 100 API limit
+    while True :
+        response = requests.get(base_url, params={"limit": limit, "skip": skip})
+        data = response.json()
+
+        results = data["results"]
+        chain_markets.extend(results)
+
+        skip += limit
+    
+        if skip >= data["total"]:
+            break
+
+    # ----------------------------------------------------------------
+    # Filtering markets by being still active and showing correct data
+    for market in chain_markets:
+        #Filter 1 : skip expired markets
+        expiry = datetime.fromisoformat(market["expiry"].replace("Z", "+00:00"))
+        if expiry < today:
+            continue
+
+        #Filter 2 : skip suspicious liquidity (over 1 billion$)
+        if market["liquidity"]["usd"] > 1_000_000_000:
+            continue
+
+        filtered_markets.append(market)
+
+    print(f"Markets after filtering on {name}: {len(filtered_markets) - count_before} active markets")
+
+# --------------------------------------------
+# Parsing market data over the selected fields
 sorted_markets = sorted(filtered_markets, key=lambda m: m["liquidity"]["usd"], reverse=True)
 
 top10 = sorted_markets[:10]
