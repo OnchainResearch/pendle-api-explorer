@@ -67,3 +67,11 @@
 - Filtered out corrupted liquidity values with a threshold
 - Sorted results by liquidity and displayed top 10
 
+# Stage 4 - Loop markets over all supported chains
+- get the corresponding  chains IDS from https://api-v2.pendle.finance/core/v1/chains
+- Implement a list in a separate config.py file
+- Use that file to store the APY limit = 100
+- Optimize loop logic to call dynamically the chain IDs from the config.py to retrieve data from each chain per iteration
+- Set the logic of count_before/after to get the correct numbers of active markets per chain to be printed on screen
+- Implement chain_markets iteration to avoid market duplicates
+
