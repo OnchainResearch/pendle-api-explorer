@@ -97,7 +97,7 @@ with open("pendle_history.csv", "w", newline="") as f:
     writer.writerow(["Name", "Address", "Date", "TVL"])
 
     for market in filtered_markets:
-        history_url = f"https://api-v2.pendle.finance/core/v1/{market['chainId']}/markets/{market['address']}/historical-data?time_frame=week"
+        history_url = f"https://api-v2.pendle.finance/core/v1/{market['chainId']}/markets/{market['address']}/historical-data?time_frame=day"
         response = requests.get(history_url)
         history = response.json()
 
