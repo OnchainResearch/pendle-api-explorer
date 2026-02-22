@@ -75,3 +75,10 @@
 - Set the logic of count_before/after to get the correct numbers of active markets per chain to be printed on screen
 - Implement chain_markets iteration to avoid market duplicates
 
+# Stage 5 - Add week history analysis of the top market
+- Decision to get the history of the actual active markets (132)
+- Get history data from the url https://api-v2.pendle.finance/core/v1/chainId/markets/marketAddress/historical-data?time_frame=week
+- Retrieve dynamically the market[0] data using {chainId} and {address}
+- Use zip() to re-associate the table format into into a classic parrallel list matching {date, tvl}
+- Change the timestamp format from UNIX to YYYY-MM-DD
+
