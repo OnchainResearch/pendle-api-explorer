@@ -80,3 +80,12 @@ with open("pendle_markets.csv", "w", newline="") as f:
         ])
 
 print("CSV exported: pendle_markets.csv")
+
+top_market = sorted_markets[0]
+history_url = f"https://api-v2.pendle.finance/core/v1/{top_market['chainId']}/markets/{top_market['address']}/historical-data?time_frame=week"
+response = requests.get(history_url)
+history = response.json()
+
+for timestamp, tvl in zip(history['timestamp'], history['tvl']):
+    date = datetime.fromtimestamp(timestamp).strftime("%Y-%m-%d")
+    print(date, tvl)
