@@ -82,3 +82,10 @@
 - Use zip() to re-associate the table format into into a classic parrallel list matching {date, tvl}
 - Change the timestamp format from UNIX to YYYY-MM-DD
 
+# Stage 6 - Add historical TVL fetching for all markets
+- Loop over all 132 filtered markets to fetch weekly TVL history
+- Convert Unix timestamps to readable dates with datetime.fromtimestamp
+- Export historical data to pendle_history.csv in long format
+- Added time.sleep(0.5) to respect API rate limits
+
+
