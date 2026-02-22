@@ -1,5 +1,6 @@
 import requests
 import csv
+import time
 
 from config import chains, limit
 from datetime import datetime, timezone
@@ -9,6 +10,7 @@ filtered_markets = []
 
 # ---------------------------------------------
 # Set initial loop through all supported chains
+
 for name, chain_id in chains.items():
     base_url = f"https://api-v2.pendle.finance/core/v1/{chain_id}/markets" 
     chain_markets = []
@@ -17,6 +19,7 @@ for name, chain_id in chains.items():
 
     # ---------------------------------
     # Set while loop with 100 API limit
+    
     while True :
         response = requests.get(base_url, params={"limit": limit, "skip": skip})
         data = response.json()
@@ -31,13 +34,16 @@ for name, chain_id in chains.items():
 
     # ----------------------------------------------------------------
     # Filtering markets by being still active and showing correct data
+    
     for market in chain_markets:
         #Filter 1 : skip expired markets
+        
         expiry = datetime.fromisoformat(market["expiry"].replace("Z", "+00:00"))
         if expiry < today:
             continue
 
         #Filter 2 : skip suspicious liquidity (over 1 billion$)
+        
         if market["liquidity"]["usd"] > 1_000_000_000:
             continue
 
@@ -47,6 +53,7 @@ for name, chain_id in chains.items():
 
 # --------------------------------------------
 # Parsing market data over the selected fields
+
 sorted_markets = sorted(filtered_markets, key=lambda m: m["liquidity"]["usd"], reverse=True)
 
 top10 = sorted_markets[:10]
@@ -63,6 +70,7 @@ for market in top10:
 
 # -----------------------
 # Export data to csv file
+
 with open("pendle_markets.csv", "w", newline="") as f:
     writer = csv.writer(f)
 
@@ -81,11 +89,21 @@ with open("pendle_markets.csv", "w", newline="") as f:
 
 print("CSV exported: pendle_markets.csv")
 
-top_market = sorted_markets[0]
-history_url = f"https://api-v2.pendle.finance/core/v1/{top_market['chainId']}/markets/{top_market['address']}/historical-data?time_frame=week"
-response = requests.get(history_url)
-history = response.json()
+# --------------------------------------------
+# Add week history analysis of the top markets
 
-for timestamp, tvl in zip(history['timestamp'], history['tvl']):
-    date = datetime.fromtimestamp(timestamp).strftime("%Y-%m-%d")
-    print(date, tvl)
+with open("pendle_history.csv", "w", newline="") as f:
+    writer = csv.writer(f)
+    writer.writerow(["Name", "Address", "Date", "TVL"])
+
+    for market in filtered_markets:
+        history_url = f"https://api-v2.pendle.finance/core/v1/{market['chainId']}/markets/{market['address']}/historical-data?time_frame=week"
+        response = requests.get(history_url)
+        history = response.json()
+
+        for timestamp, tvl in zip(history['timestamp'], history['tvl']):
+            date = datetime.fromtimestamp(timestamp).strftime("%Y-%m-%d")
+            print(market['simpleName'], market['address'], date, tvl)
+            writer.writerow([market['simpleName'], market['address'], date, tvl])
+
+        time.sleep(0.5)
