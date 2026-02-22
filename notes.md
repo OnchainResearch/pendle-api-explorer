@@ -89,4 +89,9 @@
 - Added time.sleep(0.5) to respect API rate limits
 - Change weekly timeframe to daily timeframe history
 
+# Stage 7 - Add analysis file using pandas
+- Create independant file to analyze pendle_history.csv
+- Parse csv entries and group by date and keep top 10 entries
+- Export selection to new csv file named pendle_top10_history.csv
+
 
