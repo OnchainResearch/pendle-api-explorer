@@ -94,4 +94,12 @@
 - Parse csv entries and group by date and keep top 10 entries
 - Export selection to new csv file named pendle_top10_history.csv
 
+# Stage 8 - Add animated bar chart race for top 10 Pendle Markets
+- Built pendle_chart.py with FuncAnimation
+- Fixed duplicate market bug by combining Name + Chain as Label
+- Assigned persistent colors per market via color_map
+- Clean styling: removed spines, ticks, DejaVu Sans font
+- Export to MPD via ffmpeg at 12fps, dpi=150"
+- Add reverse look up in pendle_fetcher.py to get the market name via their respective number.
+
 
