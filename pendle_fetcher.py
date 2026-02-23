@@ -8,6 +8,11 @@ from datetime import datetime, timezone
 today = datetime.now(timezone.utc)
 filtered_markets = []
 
+# ------------------------------------------------------------------------------
+# Add a reverse look up on config.py to get the names from the number associated
+
+chain_names = {v: k for k, v in chains.items()}
+
 # ---------------------------------------------
 # Set initial loop through all supported chains
 
@@ -94,7 +99,7 @@ print("CSV exported: pendle_markets.csv")
 
 with open("pendle_history.csv", "w", newline="") as f:
     writer = csv.writer(f)
-    writer.writerow(["Name", "Address", "Date", "TVL"])
+    writer.writerow(["Name", "Chain", "Address", "Date", "TVL"])
 
     for market in filtered_markets:
         history_url = f"https://api-v2.pendle.finance/core/v1/{market['chainId']}/markets/{market['address']}/historical-data?time_frame=day"
@@ -103,7 +108,7 @@ with open("pendle_history.csv", "w", newline="") as f:
 
         for timestamp, tvl in zip(history['timestamp'], history['tvl']):
             date = datetime.fromtimestamp(timestamp).strftime("%Y-%m-%d")
-            print(market['simpleName'], market['address'], date, tvl)
-            writer.writerow([market['simpleName'], market['address'], date, tvl])
+            print(market['simpleName'], chain_names[market['chainId']], market['address'], date, tvl)
+            writer.writerow([market['simpleName'], chain_names[market['chainId']], market['address'], date, tvl])
 
         time.sleep(0.5)
